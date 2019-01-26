@@ -9,6 +9,13 @@ public class Panic : MonoBehaviour
     [SerializeField] float max = 100;
     [SerializeField] float regenRate = 1;
 
+    public CameraCanvas cameraCanvas;
+
+    private void Update()
+    {
+        cameraCanvas.UpdatePanicLevel((max - level) / max);
+    }
+
     void FixedUpdate()
     {
         if (InSpotLight())
