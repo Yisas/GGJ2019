@@ -11,6 +11,7 @@ public class Panic : MonoBehaviour
     [SerializeField] float panicRegenRate = 1;
     [SerializeField] float panicIncreaseRate = 1;
     [SerializeField] float panicEventDuration = 5;
+    [SerializeField] float panicEventAutoRecovery = 30;
     bool panicEventActive = false;
     private float panicEventTimer = 0;
 
@@ -39,7 +40,7 @@ public class Panic : MonoBehaviour
             panicEventTimer -= Time.deltaTime;
             if(panicEventTimer <= 0)
             {
-                StopPanicEvent();
+                PanicEventAutoRecover();
             }
         }
         else
@@ -49,6 +50,10 @@ public class Panic : MonoBehaviour
                 TriggerPanicEvent();
             }
         }
+
+        // For debugging purposes only, perhaps remove later
+        if (Input.GetButtonDown("Force Panic"))
+            level = 100;
     }
 
     bool InSpotLight()
@@ -69,5 +74,14 @@ public class Panic : MonoBehaviour
     {
         panicEventActive = false;
         steering.ToggleInvertControls(false);
+    }
+
+    // After panic timer is done, reduce levels a little bit
+    void PanicEventAutoRecover()
+    {
+        steering.ToggleInvertControls(false);
+        panicEventTimer = panicEventDuration;
+        level -= panicEventAutoRecovery;
+        panicEventActive = false;
     }
 }

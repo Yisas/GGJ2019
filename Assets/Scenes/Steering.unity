@@ -1468,5 +1468,15 @@ PrefabInstance:
       propertyPath: panicIncreaseRate
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6548762326987161328, guid: a3489adaef0bfed48a7932b7c4949566,
+        type: 3}
+      propertyPath: panicEventDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548762326987161328, guid: a3489adaef0bfed48a7932b7c4949566,
+        type: 3}
+      propertyPath: panicEventAutoRecovery
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3489adaef0bfed48a7932b7c4949566, type: 3}
