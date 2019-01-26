@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6548762326987161331}
   m_Layer: 0
   m_Name: Test Boat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1064b9ec789cd544bc9e9158c677ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoPanicActive: 0
   light: {fileID: 0}
   level: 0
   max: 100
@@ -147,7 +148,7 @@ MonoBehaviour:
   panicIncreaseRate: 10
   panicEventDuration: 2.5
   panicEventAutoRecovery: 50
-  cameraCanvas: {fileID: 0}
+  obstacleCollisionPunishment: 0
 --- !u!114 &6548762326987161331
 MonoBehaviour:
   m_ObjectHideFlags: 0
