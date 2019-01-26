@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Steering : MonoBehaviour
 {
-    [SerializeField] string horizontalInputName = "Horizontal";
-    [SerializeField] string verticalInputName = "Vertical";
+    [SerializeField] internal string horizontalInputName = "Horizontal";
+    [SerializeField] internal string verticalInputName = "Vertical";
 
     [SerializeField] float acceleration = 0.0f;
     [SerializeField] float drag = 0.0f;
