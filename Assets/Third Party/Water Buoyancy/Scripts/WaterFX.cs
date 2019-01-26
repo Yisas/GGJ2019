@@ -207,8 +207,15 @@ namespace WaterBuoyancy
                 return;
             }
 
-            Vector4 waveSpeed = mat.GetVector("WaveSpeed");
-            float waveScale = mat.GetFloat("_WaveScale");
+            Vector4 waveSpeed = Vector4.one;
+            float waveScale = 1;
+
+            if(mat.HasProperty("WaveSpeed"))
+                waveSpeed = mat.GetVector("WaveSpeed");
+
+            if (mat.HasProperty("_WaveScale"))
+                waveScale = mat.GetFloat("WaveSpeed");
+
             Vector4 waveScale4 = new Vector4(waveScale, waveScale, waveScale * 0.4f, waveScale * 0.45f);
 
             // Time since level load, and do intermediate calculations with doubles
