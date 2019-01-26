@@ -2,26 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Steering))]
 public class Panic : MonoBehaviour
 {
     [SerializeField] Light light;
     [SerializeField] float level = 0;
     [SerializeField] float max = 100;
-    [SerializeField] float regenRate = 1;
+    [SerializeField] float panicRegenRate = 1;
+    [SerializeField] float panicIncreaseRate = 1;
+    [SerializeField] float panicEventDuration = 5;
+    bool panicEventActive = false;
+    private float panicEventTimer = 0;
+
+    private Steering steering;
 
     public CameraCanvas cameraCanvas;
 
-    private void Update()
+    private void Start()
     {
-        cameraCanvas.UpdatePanicLevel((max - level) / max);
+        steering = GetComponent<Steering>();
     }
 
-    void FixedUpdate()
+    private void Update()
     {
+        cameraCanvas.UpdatePanicLevel(level / max);
+
         if (InSpotLight())
+            level -= panicRegenRate * Time.deltaTime;
+        else
+            level += panicIncreaseRate * Time.deltaTime;
+
+        level = Mathf.Clamp(level, 0, max);
+
+        if (panicEventActive)
         {
-            level += regenRate * Time.deltaTime;
-            level = Mathf.Min(level, max);
+            panicEventTimer -= Time.deltaTime;
+            if(panicEventTimer <= 0)
+            {
+                StopPanicEvent();
+            }
+        }
+        else
+        {
+            if (level >= max)
+            {
+                TriggerPanicEvent();
+            }
         }
     }
 
@@ -30,5 +56,18 @@ public class Panic : MonoBehaviour
         var line = transform.position - light.transform.position;
         var angle = Vector3.Angle(line, light.transform.forward);
         return angle < light.spotAngle;
+    }
+
+    void TriggerPanicEvent()
+    {
+        panicEventActive = true;
+        panicEventTimer = panicEventDuration;
+        steering.ToggleInvertControls(true);
+    }
+
+    void StopPanicEvent()
+    {
+        panicEventActive = false;
+        steering.ToggleInvertControls(false);
     }
 }
