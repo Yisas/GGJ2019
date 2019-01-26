@@ -13,6 +13,13 @@ public class Steering : MonoBehaviour
 
     internal Vector3 velocity = Vector3.zero;
 
+    Rigidbody rigidbody;
+
+    void Start()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
         var horizontal = Input.GetAxis(horizontalInputName);
@@ -31,6 +38,6 @@ public class Steering : MonoBehaviour
     void FixedUpdate()
     {
         velocity *= 1 - (drag * Time.deltaTime);
-        transform.Translate(velocity * Time.deltaTime, Space.World);
+        rigidbody.MovePosition(rigidbody.position + velocity * Time.deltaTime);
     }
 }
