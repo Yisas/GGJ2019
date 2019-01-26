@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Focus : MonoBehaviour
 {
-    [SerializeField] Transform source;
-    [SerializeField] Transform target;
+    [SerializeField] internal Transform source;
+    [SerializeField] internal Transform target;
     [SerializeField] float distance = 10.0f;
 
     Light light;

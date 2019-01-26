@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5019052299204308860}
   - component: {fileID: 5019052299204308861}
   - component: {fileID: 5019052299204308858}
+  - component: {fileID: 2953407219197345576}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -112,3 +113,19 @@ MonoBehaviour:
   source: {fileID: 0}
   target: {fileID: 0}
   distance: 15
+--- !u!114 &2953407219197345576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019052299204308862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec955ea9c64484148ba86f36d4454f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTime: 15
+  maxTime: 25
+  difficulty: 2
+  decayRate: 5
