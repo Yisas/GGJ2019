@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Steering))]
 public class Panic : MonoBehaviour
 {
+    [SerializeField] bool autoPanicActive = false;
     [SerializeField] Light light;
     [SerializeField] float level = 0;
     [SerializeField] float max = 100;
@@ -12,6 +13,7 @@ public class Panic : MonoBehaviour
     [SerializeField] float panicIncreaseRate = 1;
     [SerializeField] float panicEventDuration = 5;
     [SerializeField] float panicEventAutoRecovery = 30;
+    [SerializeField] float obstacleCollisionPunishment;
     bool panicEventActive = false;
     private float panicEventTimer = 0;
 
@@ -30,7 +32,7 @@ public class Panic : MonoBehaviour
 
         if (InSpotLight())
             level -= panicRegenRate * Time.deltaTime;
-        else
+        else if(autoPanicActive)
             level += panicIncreaseRate * Time.deltaTime;
 
         level = Mathf.Clamp(level, 0, max);
@@ -83,5 +85,23 @@ public class Panic : MonoBehaviour
         panicEventTimer = panicEventDuration;
         level -= panicEventAutoRecovery;
         panicEventActive = false;
+    }
+
+    void HandleObstacleCollision()
+    {
+        if (!panicEventActive)
+        {
+            level += obstacleCollisionPunishment;
+            level = Mathf.Clamp(level, 0, max);
+            cameraCanvas.UpdatePanicLevel(level / max);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        {
+            HandleObstacleCollision();
+        }
     }
 }
