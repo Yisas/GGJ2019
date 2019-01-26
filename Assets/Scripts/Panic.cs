@@ -7,22 +7,21 @@ public class Panic : MonoBehaviour
     [SerializeField] Light light;
     [SerializeField] float level = 0;
     [SerializeField] float max = 100;
-    [SerializeField] float regenRate = 1;
+    [SerializeField] float panicRegenRate = 1;
+    [SerializeField] float panicIncreaseRate = 1;
 
     public CameraCanvas cameraCanvas;
 
     private void Update()
     {
-        cameraCanvas.UpdatePanicLevel((max - level) / max);
-    }
+        cameraCanvas.UpdatePanicLevel(level / max);
 
-    void FixedUpdate()
-    {
         if (InSpotLight())
-        {
-            level += regenRate * Time.deltaTime;
-            level = Mathf.Min(level, max);
-        }
+            level -= panicRegenRate * Time.deltaTime;
+        else
+            level += panicIncreaseRate * Time.deltaTime;
+
+        level = Mathf.Clamp(level, 0, max);
     }
 
     bool InSpotLight()
