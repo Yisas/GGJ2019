@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: c337c32fcd5f7a74f97e81935cd1bddd
+timeCreated: 1474301260
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BackProp
+    100002: BackStab
+    100004: Base
+    100006: Cabin
+    100008: Door
+    100010: Gun
+    100012: LeftForwProp
+    100014: LeftProt
+    100016: LeftSideGum
+    100018: LeftSideGum.001
+    100020: Props.001
+    100022: Radar
+    100024: Ram
+    100026: RightForwProp
+    100028: RightProt
+    100030: RightSideGum
+    100032: RightSideGum.001
+    100034: //RootNode
+    100036: Turret
+    100038: Monition
+    100040: MonitionHolder
+    400000: BackProp
+    400002: BackStab
+    400004: Base
+    400006: Cabin
+    400008: Door
+    400010: Gun
+    400012: LeftForwProp
+    400014: LeftProt
+    400016: LeftSideGum
+    400018: LeftSideGum.001
+    400020: Props.001
+    400022: Radar
+    400024: Ram
+    400026: RightForwProp
+    400028: RightProt
+    400030: RightSideGum
+    400032: RightSideGum.001
+    400034: //RootNode
+    400036: Turret
+    400038: Monition
+    400040: MonitionHolder
+    2300000: BackProp
+    2300002: BackStab
+    2300004: Base
+    2300006: Cabin
+    2300008: Door
+    2300010: Gun
+    2300012: LeftForwProp
+    2300014: LeftProt
+    2300016: LeftSideGum
+    2300018: LeftSideGum.001
+    2300020: Props.001
+    2300022: Radar
+    2300024: Ram
+    2300026: RightForwProp
+    2300028: RightProt
+    2300030: RightSideGum
+    2300032: RightSideGum.001
+    2300034: Turret
+    2300036: Monition
+    2300038: MonitionHolder
+    3300000: BackProp
+    3300002: BackStab
+    3300004: Base
+    3300006: Cabin
+    3300008: Door
+    3300010: Gun
+    3300012: LeftForwProp
+    3300014: LeftProt
+    3300016: LeftSideGum
+    3300018: LeftSideGum.001
+    3300020: Props.001
+    3300022: Radar
+    3300024: Ram
+    3300026: RightForwProp
+    3300028: RightProt
+    3300030: RightSideGum
+    3300032: RightSideGum.001
+    3300034: Turret
+    3300036: Monition
+    3300038: MonitionHolder
+    4300000: Base
+    4300002: LeftProt
+    4300004: RightProt
+    4300006: BackStab
+    4300008: BackProp
+    4300010: RightForwProp
+    4300012: LeftForwProp
+    4300014: Ram
+    4300016: Turret
+    4300018: Gun
+    4300020: LeftSideGum.001
+    4300022: RightSideGum.001
+    4300024: RightSideGum
+    4300026: LeftSideGum
+    4300028: Cabin
+    4300030: Door
+    4300032: Radar
+    4300034: Props.001
+    4300036: Monition
+    4300038: MonitionHolder
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
