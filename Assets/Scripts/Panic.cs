@@ -18,12 +18,12 @@ public class Panic : MonoBehaviour
     private float panicEventTimer = 0;
 
     private Steering steering;
-
-    public CameraCanvas cameraCanvas;
+    private CameraCanvas cameraCanvas;
 
     private void Start()
     {
         steering = GetComponent<Steering>();
+        cameraCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<CameraCanvas>();
     }
 
     private void Update()

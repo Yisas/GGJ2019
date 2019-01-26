@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5370700535676112328}
   - component: {fileID: 5370700535676112327}
   - component: {fileID: 5370700535676112326}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ BoxCollider:
   m_GameObject: {fileID: 5370700535676112324}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5370700537066943850}
   - component: {fileID: 5370700537066943853}
   - component: {fileID: 5370700537066943854}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spotlight Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1064b9ec789cd544bc9e9158c677ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoPanicActive: 0
   light: {fileID: 0}
   level: 0
   max: 100
-  regenRate: 1
+  panicRegenRate: 1
+  panicIncreaseRate: 1
+  panicEventDuration: 5
+  panicEventAutoRecovery: 30
+  obstacleCollisionPunishment: 0
