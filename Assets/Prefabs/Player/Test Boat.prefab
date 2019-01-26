@@ -143,7 +143,10 @@ MonoBehaviour:
   light: {fileID: 0}
   level: 0
   max: 100
-  regenRate: 1
+  panicRegenRate: 10
+  panicIncreaseRate: 10
+  panicEventDuration: 5
+  cameraCanvas: {fileID: 0}
 --- !u!114 &6548762326987161331
 MonoBehaviour:
   m_ObjectHideFlags: 0

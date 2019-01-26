@@ -13,6 +13,8 @@ public class Steering : MonoBehaviour
 
     internal Vector3 velocity = Vector3.zero;
 
+    private bool invertedControls = false;
+
     Rigidbody rigidbody;
 
     void Start()
@@ -24,6 +26,13 @@ public class Steering : MonoBehaviour
     {
         var horizontal = Input.GetAxis(horizontalInputName);
         var vertical = Input.GetAxis(verticalInputName);
+
+        if (invertedControls)
+        {
+            horizontal = -horizontal;
+            vertical = -vertical;
+        }
+
         if (!Mathf.Approximately(vertical, 0.0f) || !Mathf.Approximately(horizontal, 0.0f))
         {
             var direction = (new Vector3(horizontal, 0.0f, vertical)).normalized;
@@ -39,5 +48,10 @@ public class Steering : MonoBehaviour
     {
         velocity *= 1 - (drag * Time.deltaTime);
         rigidbody.MovePosition(rigidbody.position + velocity * Time.deltaTime);
+    }
+
+    public void ToggleInvertControls(bool on)
+    {
+        invertedControls = on;
     }
 }
