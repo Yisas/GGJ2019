@@ -24,6 +24,13 @@ public class Aligning : MonoBehaviour
         {
             velocity += ((angle > 0)? 1 : -1) * acceleration * Time.deltaTime;
         }
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(steering.velocity), velocity);
+        if (steering.velocity != Vector3.zero)
+        {
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                Quaternion.LookRotation(steering.velocity),
+                velocity
+            );
+        }
     }
 }
