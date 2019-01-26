@@ -1,50 +1,18 @@
-# Unity-WaterBuoyancy
-Water Buoyancy Simulation for Unity Engine
+# Dungeon of the Mind
 
-![gif](https://github.com/dbrizov/dbrizov.github.io/blob/master/images/project-images/water-buoyancy/idle.gif)
-![gif](https://github.com/dbrizov/dbrizov.github.io/blob/master/images/project-images/water-buoyancy/dive-in.gif)
-![screenshot](https://github.com/dbrizov/dbrizov.github.io/blob/master/images/project-images/water-buoyancy/surface-normal.png)
+## Overview
+[The LightHouse & The Dunning Kruger](https://globalgamejam.org/2019/games/the-dunning-kruger) is a submission for the [Global Game Jam](https://globalgamejam.org/) 2019 edition, developed in 48 hours using Unity3D. It is a 3D, 3rd person ship-sail video game where perspective is altered for players. The world you see may not be correct or complete, and you will need to rely on both your vision and your LightHouse to guide you through the shore to reach Home. 
 
-## System Requirements
+![screenshot 1](https://user-images.githubusercontent.com/7291039/35534876-d9e7711a-050f-11e8-8f4f-41dca460a922.png)
 
-Unity 2018.3.0 or later versions. Feel free to try older version
+## Technology notes
+This game requires a 2 monitors and 2 controllers plugged in on the same PC, and it is intended for players to not be able to look at each other's screens. You may download the executable binaries from the [GGJ website](https://globalgamejam.org/2018/games/dungeon-mind) or by direct download [here](https://ggj.s3.amazonaws.com/games/2018/01/175640/exec/ZXX78/Dungeon%20of%20the%20Mind.zip).
 
-## How To Setup
-
-You can use the ready to go prefabs (**WaterPro_DayTime** and **WaterPro_NightTime**). <br>
-They are both located in the Prefabs folder. The only difference between the two
-is that they use different shaders for daylight and moonlight. <br>
-
-The two important scripts are **WaterVolume.cs** and **FloatingObject.cs**. <br>
-The water volume applies buoyancy forces only to floating objects.
-The water volume needs to have a tag **Water Volume** in order for the floating objects to detect collisions with the water.
-The floating is just like in real life physics. If an object has density lesser than
-the density of the water, it will float. If an object has greater density than that of the water, it will sink.
-If for example an object has density equal to half the density of the water, then the object will submerge exactly half of its volume.
-The other half of the volume will be above the water. For more info see this [Buoyancy Reference](http://scienceprimer.com/buoyancy) <br>
-
-The **WaterVolume.cs** script works only with the procedural Mesh in the project due to performance optimizations.
-
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2015 Denis Rizov
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## Contributing members
+- [Vladimir De La Cruz](https://github.com/vladimirdlc)
+- Jesus Imery
+- Alex Glukov
+- Sam
+- Michelle Samsom
+- Sherm
+(add your name)
