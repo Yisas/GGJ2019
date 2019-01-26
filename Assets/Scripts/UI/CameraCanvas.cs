@@ -5,26 +5,18 @@ using UnityEngine.UI;
 
 public class CameraCanvas : MonoBehaviour
 {
-    public Image panicProgressBar;
-    public float panicProgressPos;
+    [SerializeField] Slider panic;
+    [SerializeField] Slider power;
+    [SerializeField] float updateSpeed = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void UpdatePanicLevel(float percentage)
     {
-        Vector3 rectPosition = panicProgressBar.rectTransform.localPosition;
-        rectPosition.x = -panicProgressPos + panicProgressPos * (percentage);
-        panicProgressBar.rectTransform.localPosition = rectPosition;
-        panicProgressBar.rectTransform.localScale = new Vector3(percentage, 1, 1);
+        panic.value = Mathf.Lerp(panic.value, percentage, Time.deltaTime * updateSpeed);
+    }
+
+    public void UpdatePowerLevel(float percentage)
+    {
+        power.value = Mathf.Lerp(power.value, percentage, Time.deltaTime * updateSpeed);
     }
 }
