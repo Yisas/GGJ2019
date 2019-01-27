@@ -46,8 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalMood: {fileID: 8300000, guid: f6e25df138ff9464da94a64e6d4bf994, type: 3}
   panickedMood: {fileID: 8300000, guid: 209e5071a4b5d4740a523d17db63431e, type: 3}
-  normalToPanicTransition: {fileID: 0}
-  panicToNormalTransition: {fileID: 0}
+  normalToPanicTransition: {fileID: 8300000, guid: 4ba1b3b161bcd3940869c54a89c17c12,
+    type: 3}
+  panicToNormalTransition: {fileID: 8300000, guid: 5b4aaa57cd030f54486983aa3047f772,
+    type: 3}
+  moodTransitionDuration: 0
 --- !u!82 &1658871340582972821
 AudioSource:
   m_ObjectHideFlags: 0
