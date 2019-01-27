@@ -394,10 +394,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 586c2ee969bf7f246b173dddd80d273b, type: 3}
-    m_FontSize: 22
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
   finalWheelScale: {x: 0.45, y: 0.45, z: 0}
   panel: {fileID: 6054702587678743724}
   updateSpeed: 5
-  popupDuration: 5
+  popupDuration: 10
   blackoutImage: {fileID: 4035940876438735334}
   fadeSpeed: 0.003
 --- !u!95 &8519623075936252618

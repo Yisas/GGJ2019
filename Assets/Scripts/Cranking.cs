@@ -25,6 +25,7 @@ public class Cranking : MonoBehaviour
     State nextState;
     float progress;
     float bias = 0.1f;
+    bool shownTutorial = false;
 
     CameraCanvas cameraCanvas;
 
@@ -36,6 +37,7 @@ public class Cranking : MonoBehaviour
         verticalInputName = player.verticalInputName;
         light = GetComponent<Light>();
         initialIntensity = light.intensity;
+        //Activate();
     }
 
     void Update()
@@ -106,6 +108,12 @@ public class Cranking : MonoBehaviour
             light.intensity = 0;
             player.enabled = false;
             nextState = State.Vertical;
+            if (!shownTutorial)
+            {
+                yield return new WaitForSeconds(1.0f);
+                cameraCanvas.DisplayMessage("The power went out!\nRotate the analog stick to crank the light back on.");
+                shownTutorial = true;
+            }
             yield return new WaitUntil(() => progress >= 100);
             nextState = State.None;
             yield return new WaitForSeconds(0.1f);

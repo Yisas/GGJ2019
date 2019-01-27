@@ -97,12 +97,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 25261466c3cc62c41a95f0c1507beb41, type: 2}
+    second: {fileID: 2100000, guid: 98b48698665973f419469297916fe431, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tugboat_bod_matid
-    second: {fileID: 2100000, guid: 457f0819d0f9d514a86762982e6d1863, type: 2}
+    second: {fileID: 2100000, guid: 46aed4740809cfb49b64071daa5cbf45, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
