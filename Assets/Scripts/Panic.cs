@@ -60,6 +60,10 @@ public class Panic : MonoBehaviour
 
     bool InSpotLight()
     {
+        if (light.intensity == 0)
+        {
+            return false;
+        }
         var line = transform.position - light.transform.position;
         var angle = Vector3.Angle(line, light.transform.forward);
         return angle < light.spotAngle;
