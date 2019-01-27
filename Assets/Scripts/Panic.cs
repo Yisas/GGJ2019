@@ -19,11 +19,13 @@ public class Panic : MonoBehaviour
 
     private Steering steering;
     private CameraCanvas cameraCanvas;
+    private SoundManager soundManager;
 
     private void Start()
     {
         steering = GetComponent<Steering>();
         cameraCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<CameraCanvas>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     private void Update()
@@ -74,12 +76,14 @@ public class Panic : MonoBehaviour
         panicEventActive = true;
         panicEventTimer = panicEventDuration;
         steering.ToggleInvertControls(true);
+        soundManager.TransitionToPanic();
     }
 
     void StopPanicEvent()
     {
         panicEventActive = false;
         steering.ToggleInvertControls(false);
+        soundManager.TransitionToNormal();
     }
 
     // After panic timer is done, reduce levels a little bit

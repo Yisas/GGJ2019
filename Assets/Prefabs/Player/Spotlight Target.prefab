@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 5370700537066943852}
   - component: {fileID: 5370700537066943850}
   - component: {fileID: 5370700537066943853}
-  - component: {fileID: 5370700537066943854}
   m_Layer: 11
   m_Name: Spotlight Target
   m_TagString: Untagged
@@ -174,24 +173,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &5370700537066943854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370700537066943849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1064b9ec789cd544bc9e9158c677ee4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoPanicActive: 0
-  light: {fileID: 0}
-  level: 0
-  max: 100
-  panicRegenRate: 1
-  panicIncreaseRate: 1
-  panicEventDuration: 5
-  panicEventAutoRecovery: 30
-  obstacleCollisionPunishment: 0
