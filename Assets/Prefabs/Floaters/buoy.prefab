@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5920897830496544762}
   - component: {fileID: 5920897830496544763}
   - component: {fileID: 5920897830496544760}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: buoy
-  m_TagString: Untagged
+  m_TagString: Bouy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,6 +137,50 @@ PrefabInstance:
     - target: {fileID: 100000, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
       propertyPath: m_Name
       value: buoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_TagString
+      value: Bouy
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aa553f337c92a8e4589ba1b8a3a9dcf5, type: 3}
       propertyPath: m_LocalPosition.x

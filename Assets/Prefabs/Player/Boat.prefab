@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 1034937177}
   - component: {fileID: 5192627894201574361}
   m_Layer: 0
-  m_Name: Test Boat
+  m_Name: Boat
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,6 +185,8 @@ MonoBehaviour:
   panicEventAutoRecovery: 50
   obstacleCollisionPunishment: 0
   hitRockSound: {fileID: 8300000, guid: 130e79d509b2719418d15c71c561b92e, type: 3}
+  hitCrateSound: {fileID: 8300000, guid: 72475579a1352fa43ab78ead66989b21, type: 3}
+  hitBouySound: {fileID: 8300000, guid: 130e79d509b2719418d15c71c561b92e, type: 3}
 --- !u!114 &6548762326987161331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,6 +400,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
+    - target: {fileID: 2300024, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
+    - target: {fileID: 2300026, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
+    - target: {fileID: 2300028, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
+    - target: {fileID: 2300030, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
+    - target: {fileID: 2300032, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5793265cb7c16bc4cabc5df46b90d0e5, type: 2}
     - target: {fileID: 2300008, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -430,26 +452,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
-    - target: {fileID: 2300024, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
-    - target: {fileID: 2300026, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
-    - target: {fileID: 2300028, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
-    - target: {fileID: 2300030, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3f046b4dc3404bc4098626bafa53426d, type: 2}
-    - target: {fileID: 2300032, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5793265cb7c16bc4cabc5df46b90d0e5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ce334fc36839984d9e9b4397af9b316, type: 3}
 --- !u!4 &6548762327311528132 stripped
