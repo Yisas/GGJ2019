@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: fc879f7c9f89dab4faeaacc715173709
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Door_Frame
+    100002: Fencing_Rail
+    100004: Flag_Shaft
+    100006: Flag_Shaft_Base
+    100008: Light
+    100010: Light_Base
+    100012: //RootNode
+    100014: Lighthouse_Support_Base
+    100016: Lighthouse_Walls
+    100018: Metal_Awning
+    100020: Metal_Support_Strut_1
+    100022: Metal_Support_Strut_2
+    100024: Metal_Support_Strut_3
+    100026: Metal_Support_Strut_4
+    100028: Metal_Support_Strut_5
+    100030: Metal_Support_Strut_6
+    100032: Metal_Support_Strut_7
+    100034: Metal_Support_Strut_8
+    100036: Red_Roof
+    100038: Wooden_Fencing
+    100040: Wooden_Supports
+    400000: Door_Frame
+    400002: Fencing_Rail
+    400004: Flag_Shaft
+    400006: Flag_Shaft_Base
+    400008: Light
+    400010: Light_Base
+    400012: //RootNode
+    400014: Lighthouse_Support_Base
+    400016: Lighthouse_Walls
+    400018: Metal_Awning
+    400020: Metal_Support_Strut_1
+    400022: Metal_Support_Strut_2
+    400024: Metal_Support_Strut_3
+    400026: Metal_Support_Strut_4
+    400028: Metal_Support_Strut_5
+    400030: Metal_Support_Strut_6
+    400032: Metal_Support_Strut_7
+    400034: Metal_Support_Strut_8
+    400036: Red_Roof
+    400038: Wooden_Fencing
+    400040: Wooden_Supports
+    2100000: Red_Metal
+    2100002: Worn_Wood
+    2100004: Wooden_Door
+    2100006: Shiny_Light
+    2100008: Material_009
+    2100010: Rebar_Metal
+    2100012: Worn_Wood_001
+    2100014: White_Paneling
+    2100016: Solid_Wood
+    2300000: Door_Frame
+    2300002: Fencing_Rail
+    2300004: Flag_Shaft
+    2300006: Flag_Shaft_Base
+    2300008: Light
+    2300010: Light_Base
+    2300012: Lighthouse_Support_Base
+    2300014: Lighthouse_Walls
+    2300016: Metal_Awning
+    2300018: Metal_Support_Strut_1
+    2300020: Metal_Support_Strut_2
+    2300022: Metal_Support_Strut_3
+    2300024: Metal_Support_Strut_4
+    2300026: Metal_Support_Strut_5
+    2300028: Metal_Support_Strut_6
+    2300030: Metal_Support_Strut_7
+    2300032: Metal_Support_Strut_8
+    2300034: Red_Roof
+    2300036: Wooden_Fencing
+    2300038: Wooden_Supports
+    3300000: Door_Frame
+    3300002: Fencing_Rail
+    3300004: Flag_Shaft
+    3300006: Flag_Shaft_Base
+    3300008: Light
+    3300010: Light_Base
+    3300012: Lighthouse_Support_Base
+    3300014: Lighthouse_Walls
+    3300016: Metal_Awning
+    3300018: Metal_Support_Strut_1
+    3300020: Metal_Support_Strut_2
+    3300022: Metal_Support_Strut_3
+    3300024: Metal_Support_Strut_4
+    3300026: Metal_Support_Strut_5
+    3300028: Metal_Support_Strut_6
+    3300030: Metal_Support_Strut_7
+    3300032: Metal_Support_Strut_8
+    3300034: Red_Roof
+    3300036: Wooden_Fencing
+    3300038: Wooden_Supports
+    4300000: Light_Base
+    4300002: Metal_Awning
+    4300004: Door_Frame
+    4300006: Light
+    4300008: Wooden_Supports
+    4300010: Wooden_Fencing
+    4300012: Flag_Shaft
+    4300014: Red_Roof
+    4300016: Lighthouse_Support_Base
+    4300018: Lighthouse_Walls
+    4300020: Flag_Shaft_Base
+    4300022: Fencing_Rail
+    4300024: Metal_Support_Strut_1
+    4300026: Metal_Support_Strut_2
+    4300028: Metal_Support_Strut_3
+    4300030: Metal_Support_Strut_4
+    4300032: Metal_Support_Strut_5
+    4300034: Metal_Support_Strut_6
+    4300036: Metal_Support_Strut_7
+    4300038: Metal_Support_Strut_8
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
