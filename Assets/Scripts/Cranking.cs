@@ -36,8 +36,6 @@ public class Cranking : MonoBehaviour
         verticalInputName = player.verticalInputName;
         light = GetComponent<Light>();
         initialIntensity = light.intensity;
-        Activate();
-
     }
 
     void Update()
