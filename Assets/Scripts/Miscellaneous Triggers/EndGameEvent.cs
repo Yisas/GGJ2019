@@ -24,8 +24,9 @@ public class EndGameEvent : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("hey");
             StartCoroutine("RaiseIntensity");
+            other.GetComponent<Steering>().GoToEndGame();
+            other.GetComponent<Steering>().affectedByWind = false;
         }
     }
 
