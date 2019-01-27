@@ -15,14 +15,18 @@ public class Steering : MonoBehaviour
     internal Vector3 velocity = Vector3.zero;
 
     private bool invertedControls = false;
+    private Transform endGameLocation;
 
     Rigidbody rigidbody;
     Wind wind;
+
+    bool controlsEnabled = true;
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         wind = GameObject.FindWithTag("Wind").GetComponent<Wind>();
+        endGameLocation = GameObject.FindWithTag("End Game Destination").transform;
     }
 
     void Update()
@@ -36,10 +40,22 @@ public class Steering : MonoBehaviour
             vertical = -vertical;
         }
 
-        if (!Mathf.Approximately(vertical, 0.0f) || !Mathf.Approximately(horizontal, 0.0f))
+        Vector3 direction = new Vector3();
+
+        if (controlsEnabled)
         {
-            var direction = (new Vector3(horizontal, 0.0f, vertical)).normalized;
+            direction = (new Vector3(horizontal, 0.0f, vertical)).normalized;
+        }
+        else
+        {
+            direction = (endGameLocation.position - transform.position).normalized;
+            direction = new Vector3(direction.x, 0, direction.z);
+        }
+
+        if (!Mathf.Approximately(vertical, 0.0f) || !Mathf.Approximately(horizontal, 0.0f) || !controlsEnabled)
+        {
             velocity += direction * acceleration * Time.deltaTime;
+
             if (velocity.magnitude > maxVelocity)
             {
                 velocity = direction * maxVelocity;
@@ -65,5 +81,10 @@ public class Steering : MonoBehaviour
     public void ToggleInvertControls(bool on)
     {
         invertedControls = on;
+    }
+
+    public void GoToEndGame()
+    {
+        controlsEnabled = false;
     }
 }
