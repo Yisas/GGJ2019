@@ -104,6 +104,7 @@ public class Cranking : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
             light.intensity = initialIntensity / 2;
             yield return new WaitForSeconds(0.4f);
+            cameraCanvas.UpdatePowerLevel(0, true);
             light.intensity = 0;
             player.enabled = false;
             nextState = State.Vertical;
