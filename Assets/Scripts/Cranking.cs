@@ -26,13 +26,18 @@ public class Cranking : MonoBehaviour
     float progress;
     float bias = 0.1f;
 
+    CameraCanvas cameraCanvas;
+
     void Start()
     {
+        cameraCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<CameraCanvas>();
         player = GetComponent<Focus>().target.GetComponent<Steering>();
         horizontalInputName = player.horizontalInputName;
         verticalInputName = player.verticalInputName;
         light = GetComponent<Light>();
         initialIntensity = light.intensity;
+        Activate();
+
     }
 
     void Update()
@@ -61,9 +66,8 @@ public class Cranking : MonoBehaviour
             progress -= decayRate * Time.deltaTime;
             progress = Mathf.Max(progress, 0);
             progress = Mathf.Min(progress, 100);
-            // TODO: draw on UI
         }
-        Debug.Log(progress);
+        cameraCanvas.UpdatePowerLevel(progress / 100);
     }
 
     bool IsMatch(float value, float target)
@@ -87,6 +91,7 @@ public class Cranking : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(minTime, maxTime) / 2);
         while (true)
         {
+            progress = 0;
             light.intensity = 0;
             yield return new WaitForSeconds(0.1f);
             light.intensity = initialIntensity;
@@ -99,12 +104,12 @@ public class Cranking : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
             light.intensity = initialIntensity / 2;
             yield return new WaitForSeconds(0.4f);
+            cameraCanvas.UpdatePowerLevel(0, true);
             light.intensity = 0;
             player.enabled = false;
             nextState = State.Vertical;
             yield return new WaitUntil(() => progress >= 100);
             nextState = State.None;
-            progress = 0;
             yield return new WaitForSeconds(0.1f);
             light.intensity = initialIntensity / 2;
             yield return new WaitForSeconds(0.2f);
