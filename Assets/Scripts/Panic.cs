@@ -17,6 +17,8 @@ public class Panic : MonoBehaviour
     [SerializeField] float obstacleCollisionPunishment;
 
     public AudioClip hitRockSound;
+    public AudioClip hitCrateSound;
+    public AudioClip hitBouySound;
 
     bool panicEventActive = false;
     private float panicEventTimer = 0;
@@ -41,7 +43,7 @@ public class Panic : MonoBehaviour
 
         if (InSpotLight())
             level -= panicRegenRate * Time.deltaTime;
-        else if(autoPanicActive)
+        else if (autoPanicActive)
             level += panicIncreaseRate * Time.deltaTime;
 
         level = Mathf.Clamp(level, 0, max);
@@ -49,7 +51,7 @@ public class Panic : MonoBehaviour
         if (panicEventActive)
         {
             panicEventTimer -= Time.deltaTime;
-            if(panicEventTimer <= 0)
+            if (panicEventTimer <= 0)
             {
                 PanicEventAutoRecover();
             }
@@ -68,12 +70,12 @@ public class Panic : MonoBehaviour
         if (Input.GetButtonDown("Kill Panic"))
             level = 0;
 
-        if(level > soundManager.panicLevelForTransition && lastFrameLevel < soundManager.panicLevelForTransition)
+        if (level > soundManager.panicLevelForTransition && lastFrameLevel < soundManager.panicLevelForTransition)
         {
             soundManager.TransitionToPanic();
         }
 
-        if(level < soundManager.panicLevelForTransition && lastFrameLevel > level)
+        if (level < soundManager.panicLevelForTransition && lastFrameLevel > level)
         {
             soundManager.TransitionToNormal();
         }
@@ -129,8 +131,19 @@ public class Panic : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
             HandleObstacleCollision();
-            if (collision.gameObject.tag == "Rock")
-                audioSource.PlayOneShot(hitRockSound);
+            switch (collision.gameObject.tag)
+            {
+                case "Rock":
+                    audioSource.PlayOneShot(hitRockSound);
+                    break;
+                case "Crate":
+                    audioSource.PlayOneShot(hitCrateSound);
+                    break;
+                case "Bouy":
+                    audioSource.PlayOneShot(hitBouySound);
+                    break;
+            }
+                
         }
     }
 }

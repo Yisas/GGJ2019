@@ -9,6 +9,9 @@ TagManager:
   - Player
   - MainUI
   - Wind
+  - Rock
+  - Crate
+  - Bouy
   layers:
   - Default
   - TransparentFX
