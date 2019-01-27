@@ -1,4 +1,4 @@
-# Dungeon of the Mind
+# The LightHouse & The Dunning Kruger
 
 ## Overview
 [The LightHouse & The Dunning Kruger](https://globalgamejam.org/2019/games/the-dunning-kruger) is a submission for the [Global Game Jam](https://globalgamejam.org/) 2019 edition, developed in 48 hours using Unity3D. It is a 3D, 3rd person ship-sail video game where perspective is altered for players. The world you see may not be correct or complete, and you will need to rely on both your vision and your LightHouse to guide you through the shore to reach Home. 
