@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Steering))]
 public class Panic : MonoBehaviour
 {
@@ -14,12 +15,16 @@ public class Panic : MonoBehaviour
     [SerializeField] float panicEventDuration = 5;
     [SerializeField] float panicEventAutoRecovery = 30;
     [SerializeField] float obstacleCollisionPunishment;
+
+    public AudioClip hitRockSound;
+
     bool panicEventActive = false;
     private float panicEventTimer = 0;
 
     private Steering steering;
     private CameraCanvas cameraCanvas;
     private SoundManager soundManager;
+    private AudioSource audioSource;
     private float lastFrameLevel = 0;
 
     private void Start()
@@ -27,6 +32,7 @@ public class Panic : MonoBehaviour
         steering = GetComponent<Steering>();
         cameraCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<CameraCanvas>();
         soundManager = FindObjectOfType<SoundManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -123,6 +129,8 @@ public class Panic : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
             HandleObstacleCollision();
+            if (collision.gameObject.tag == "Rock")
+                audioSource.PlayOneShot(hitRockSound);
         }
     }
 }
