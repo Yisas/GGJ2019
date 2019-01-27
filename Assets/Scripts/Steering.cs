@@ -10,16 +10,23 @@ public class Steering : MonoBehaviour
     [SerializeField] float acceleration = 0.0f;
     [SerializeField] float drag = 0.0f;
     [SerializeField] float maxVelocity = 0.0f;
+    public bool affectedByWind = false;
 
     internal Vector3 velocity = Vector3.zero;
 
     private bool invertedControls = false;
 
     Rigidbody rigidbody;
+    Wind wind;
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        var found = GameObject.Find("Wind");
+        if (found)
+        {
+            wind = found.GetComponent<Wind>();
+        }
     }
 
     void Update()
@@ -46,8 +53,17 @@ public class Steering : MonoBehaviour
 
     void FixedUpdate()
     {
-        velocity *= 1 - (drag * Time.deltaTime);
+        if (affectedByWind)
+        {
+            velocity += wind.GetAcceleration() * Time.deltaTime;
+            if (velocity.magnitude > maxVelocity)
+            {
+                velocity = velocity.normalized * maxVelocity;
+            }
+        }
         rigidbody.MovePosition(rigidbody.position + velocity * Time.deltaTime);
+        velocity *= 1 - (drag * Time.deltaTime);
+
     }
 
     public void ToggleInvertControls(bool on)
