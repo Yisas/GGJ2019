@@ -7060,6 +7060,36 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7686176387679235122, guid: 55a15f838dbf426478bd47925de00b2a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686176387679235122, guid: 55a15f838dbf426478bd47925de00b2a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686176387679235122, guid: 55a15f838dbf426478bd47925de00b2a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686176387679235122, guid: 55a15f838dbf426478bd47925de00b2a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686176387679235122, guid: 55a15f838dbf426478bd47925de00b2a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686176387679235122, guid: 55a15f838dbf426478bd47925de00b2a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 133270007699102531, guid: 55a15f838dbf426478bd47925de00b2a,
         type: 3}
       propertyPath: m_RootOrder
