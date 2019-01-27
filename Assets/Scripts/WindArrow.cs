@@ -11,11 +11,7 @@ public class WindArrow : MonoBehaviour
 
     void Start()
     {
-        var found = GameObject.Find("Wind");
-        if (found)
-        {
-            wind = found.GetComponent<Wind>();
-        }
+        wind = GameObject.FindWithTag("Wind").GetComponent<Wind>();
         initialScale = transform.localScale;
     }
 
