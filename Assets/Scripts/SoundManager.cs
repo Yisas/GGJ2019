@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+    public float panicLevelForTransition = 70;
     public AudioSource normalAudiosource;
     public AudioSource toNormalAudiosource;
     public AudioSource panicAudiosource;

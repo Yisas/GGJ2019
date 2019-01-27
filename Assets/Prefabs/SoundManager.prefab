@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca29afac8c9daa4b9870bc4a9edcc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panicLevelForTransition: 70
   normalAudiosource: {fileID: 1057925647807423195}
   toNormalAudiosource: {fileID: 1849852947590025036}
   panicAudiosource: {fileID: 1849852947590025026}
@@ -72,7 +73,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -363,7 +364,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

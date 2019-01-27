@@ -20,6 +20,7 @@ public class Panic : MonoBehaviour
     private Steering steering;
     private CameraCanvas cameraCanvas;
     private SoundManager soundManager;
+    private float lastFrameLevel = 0;
 
     private void Start()
     {
@@ -60,6 +61,18 @@ public class Panic : MonoBehaviour
             level = 100;
         if (Input.GetButtonDown("Kill Panic"))
             level = 0;
+
+        if(level > soundManager.panicLevelForTransition && lastFrameLevel < soundManager.panicLevelForTransition)
+        {
+            soundManager.TransitionToPanic();
+        }
+
+        if(level < soundManager.panicLevelForTransition && lastFrameLevel > level)
+        {
+            soundManager.TransitionToNormal();
+        }
+
+        lastFrameLevel = level;
     }
 
     bool InSpotLight()
@@ -78,14 +91,12 @@ public class Panic : MonoBehaviour
         panicEventActive = true;
         panicEventTimer = panicEventDuration;
         steering.ToggleInvertControls(true);
-        soundManager.TransitionToPanic();
     }
 
     void StopPanicEvent()
     {
         panicEventActive = false;
         steering.ToggleInvertControls(false);
-        soundManager.TransitionToNormal();
     }
 
     // After panic timer is done, reduce levels a little bit
