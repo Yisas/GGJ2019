@@ -27,6 +27,7 @@ public class EndGameEvent : MonoBehaviour
             StartCoroutine("RaiseIntensity");
             other.GetComponent<Steering>().GoToEndGame();
             other.GetComponent<Steering>().affectedByWind = false;
+            FindObjectOfType<SoundManager>().EndGame();
         }
     }
 

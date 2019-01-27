@@ -10,8 +10,10 @@ public class SoundManager : MonoBehaviour
     public AudioSource toNormalAudiosource;
     public AudioSource panicAudiosource;
     public AudioSource toPanicAudiosource;
+    public AudioSource endGameAudioSource;
     public AudioMixerSnapshot normalMood;
     public AudioMixerSnapshot panickedMood;
+    public AudioMixerSnapshot endGameSnapshot;
     public float mixerTransitionTime;
     public float timeToTransition = 0;
 
@@ -60,5 +62,12 @@ public class SoundManager : MonoBehaviour
             normalMood.TransitionTo(mixerTransitionTime);
         else if(transitioning == Transitioning.ToPanic)
             panickedMood.TransitionTo(mixerTransitionTime);
+    }
+
+    public void EndGame()
+    {
+        transitioning = Transitioning.No;
+        endGameAudioSource.Play();
+        endGameSnapshot.TransitionTo(mixerTransitionTime);
     }
 }
