@@ -12,6 +12,7 @@ TagManager:
   - Rock
   - Crate
   - Bouy
+  - End Game Destination
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,12 @@ public class CameraCanvas : MonoBehaviour
     [SerializeField] CanvasGroup panel;
     [SerializeField] float updateSpeed = 1;
     [SerializeField] float popupDuration = 1;
+    public Image blackoutImage;
+    public float fadeSpeed;
+
+    bool fadeOutIn = false;
+    bool fadeOutInDone = false;
+    private CanvasCallbackReceiver callbackReceiver;
 
     void Start()
     {
@@ -19,6 +25,22 @@ public class CameraCanvas : MonoBehaviour
         panic.value = 0;
         power.value = 0;
         //DisplayMessage("test");
+    }
+
+    private void Update()
+    {
+        if (fadeOutIn && fadeOutInDone)
+        {
+            fadeOutIn = false;
+            fadeOutInDone = false;
+            if (callbackReceiver != null)
+            {
+                callbackReceiver.Execute();
+                callbackReceiver = null;
+            }
+
+            StartCoroutine("FadeInCoroutine");
+        }
     }
 
     public void UpdatePanicLevel(float percentage)
@@ -60,5 +82,62 @@ public class CameraCanvas : MonoBehaviour
         panel.GetComponent<Animator>().CrossFadeInFixedTime("In", 0.5f);
         yield return new WaitForSeconds(popupDuration);
         panel.GetComponent<Animator>().CrossFadeInFixedTime("Out", 0.25f);
+    }
+
+    public void FadeOutIn(CanvasCallbackReceiver callbackReceiver = null)
+    {
+        fadeOutIn = true;
+        StartCoroutine("FadeOutCoroutine");
+        this.callbackReceiver = callbackReceiver;
+    }
+
+    public void FadeOut()
+    {
+        StartCoroutine("FadeOutCoroutine");
+    }
+
+    public void FadeIn()
+    {
+        StartCoroutine("FadeInCoroutine");
+    }
+
+    IEnumerator FadeInCoroutine()
+    {
+        Color c;
+
+        for (float f = 1f; f >= 0; f -= fadeSpeed)
+        {
+            c = blackoutImage.color;
+            c.a = f;
+            blackoutImage.color = c;
+            yield return null;
+        }
+
+        c = blackoutImage.color;
+        c.a = 0;
+        blackoutImage.color = c;
+    }
+
+    IEnumerator FadeOutCoroutine()
+    {
+        Color c;
+
+        for (float f = 0f; f <= 1.0f; f += fadeSpeed)
+        {
+            c = blackoutImage.color;
+            c.a = f;
+            blackoutImage.color = c;
+            Debug.Log(f);
+            yield return null;
+        }
+
+        c = blackoutImage.color;
+        c.a = 1;
+        blackoutImage.color = c;
+
+        if (fadeOutIn)
+        {
+            fadeOutInDone = true;
+        }
     }
 }
