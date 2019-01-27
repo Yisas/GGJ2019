@@ -69,5 +69,6 @@ public class SoundManager : MonoBehaviour
         transitioning = Transitioning.No;
         endGameAudioSource.Play();
         endGameSnapshot.TransitionTo(mixerTransitionTime);
+        DontDestroyOnLoad(endGameAudioSource);
     }
 }
