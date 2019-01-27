@@ -8,6 +8,7 @@ TagManager:
   - PostProcessing
   - Player
   - MainUI
+  - Wind
   layers:
   - Default
   - TransparentFX

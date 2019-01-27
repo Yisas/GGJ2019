@@ -22,11 +22,7 @@ public class Steering : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        var found = GameObject.Find("Wind");
-        if (found)
-        {
-            wind = found.GetComponent<Wind>();
-        }
+        wind = GameObject.FindWithTag("Wind").GetComponent<Wind>();
     }
 
     void Update()
