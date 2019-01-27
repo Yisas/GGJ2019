@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class CameraCanvas : MonoBehaviour
 {
-    [SerializeField] Slider panic;
-    [SerializeField] Slider power;
+    [SerializeField] Image panic;
+    [SerializeField] Image power;
+    [SerializeField] Image wheel;
+    [SerializeField] Vector3 finalWheelPosition;
+    [SerializeField] Vector3 finalWheelScale;
     [SerializeField] CanvasGroup panel;
     [SerializeField] float updateSpeed = 1;
     [SerializeField] float popupDuration = 1;
@@ -16,14 +19,18 @@ public class CameraCanvas : MonoBehaviour
     bool fadeOutIn = false;
     bool fadeOutInDone = false;
     private CanvasCallbackReceiver callbackReceiver;
+    Vector3 initialWheelPosition;
+    Vector3 initialWheelScale;
 
     void Start()
     {
         panel.GetComponent<Animator>().CrossFadeInFixedTime("Out", 0.0f);
-        panic.GetComponent<Animator>().CrossFadeInFixedTime("Hidden", 0.0f);
-        power.GetComponent<Animator>().CrossFadeInFixedTime("Hidden", 0.0f);
-        panic.value = 0;
-        power.value = 0;
+        panic.transform.parent.GetComponent<Animator>().CrossFadeInFixedTime("Hidden", 0.0f);
+        power.transform.parent.GetComponent<Animator>().CrossFadeInFixedTime("Hidden", 0.0f);
+        panic.fillAmount = 0;
+        power.fillAmount = 0;
+        initialWheelPosition = wheel.rectTransform.anchoredPosition;
+        initialWheelScale = wheel.rectTransform.localScale;
         //DisplayMessage("test");
     }
 
@@ -45,29 +52,32 @@ public class CameraCanvas : MonoBehaviour
 
     public void UpdatePanicLevel(float percentage)
     {
-        panic.value = Mathf.Lerp(panic.value, percentage, Time.deltaTime * updateSpeed);
-        var alpha = panic.GetComponent<CanvasGroup>().alpha;
-        if (panic.value < 0.025f && alpha > 0)
+        panic.fillAmount = Mathf.Lerp(panic.fillAmount, percentage, Time.deltaTime * updateSpeed);
+        wheel.rectTransform.anchoredPosition = Vector3.Lerp(initialWheelPosition, finalWheelPosition, panic.fillAmount);
+        wheel.rectTransform.localScale = Vector3.Lerp(initialWheelScale, finalWheelScale, panic.fillAmount);
+        wheel.GetComponent<Animator>().speed = panic.fillAmount;
+        var alpha = panic.transform.parent.GetComponent<CanvasGroup>().alpha;
+        if (panic.fillAmount < 0.025f && alpha > 0)
         {
-            panic.GetComponent<Animator>().CrossFadeInFixedTime("Hidden", 0.2f);
+            panic.transform.parent.GetComponent<Animator>().CrossFadeInFixedTime("Hidden", 0.2f);
         }
-        else if (panic.value > 0.025f && alpha == 0)
+        else if (panic.fillAmount > 0.025f && alpha == 0)
         {
-            panic.GetComponent<Animator>().CrossFadeInFixedTime("Visible", 0.2f);
+            panic.transform.parent.GetComponent<Animator>().CrossFadeInFixedTime("Visible", 0.2f);
         }
     }
 
     public void UpdatePowerLevel(float percentage, bool show = false)
     {
-        power.value = Mathf.Lerp(power.value, percentage, Time.deltaTime * updateSpeed);
-        var alpha = power.GetComponent<CanvasGroup>().alpha;
-        if (Mathf.Approximately(power.value, 1) && alpha > 0)
+        power.fillAmount = Mathf.Lerp(power.fillAmount, percentage, Time.deltaTime * updateSpeed);
+        var alpha = power.transform.parent.GetComponent<CanvasGroup>().alpha;
+        if (Mathf.Approximately(power.fillAmount, 1) && alpha > 0)
         {
-            power.GetComponent<Animator>().CrossFadeInFixedTime("Hidden", 0.2f);
+            power.transform.parent.GetComponent<Animator>().CrossFadeInFixedTime("Hidden", 0.2f);
         }
-        else if (show)
+        if (show)
         {
-            power.GetComponent<Animator>().CrossFadeInFixedTime("Visible", 0.2f);
+            power.transform.parent.GetComponent<Animator>().CrossFadeInFixedTime("Visible", 0.2f);
         }
     }
 
