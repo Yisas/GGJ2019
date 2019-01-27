@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioClip normalMood;
-    public AudioClip panickedMood;
-    public AudioClip normalToPanicTransition;
-    public AudioClip panicToNormalTransition;
+    public float transitionTime;
+    public AudioSource normalAudiosource;
+    public AudioSource toNormalAudiosource;
+    public AudioSource panicAudiosource;
+    public AudioSource toPanicAudiosource;
+    public AudioMixerSnapshot normalMood;
+    public AudioMixerSnapshot toNormalTransition;
+    public AudioMixerSnapshot panickedMood;
+    public AudioMixerSnapshot toPanicTransition;
+    public float mixerTransitionTime;
 
     private enum Transitioning { No, ToNormal, ToPanic }
     private Transitioning transitioning;
-
     private AudioSource audioSource;
+    private float transitionTimer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +30,15 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transitioning == Transitioning.ToNormal && !audioSource.isPlaying)
+
+        transitionTimer -= Time.deltaTime;
+
+        if(transitioning == Transitioning.ToNormal && transitionTimer <= 0)
         {
             Normal();
         }
 
-        if (transitioning == Transitioning.ToPanic && !audioSource.isPlaying)
+        if (transitioning == Transitioning.ToPanic && transitionTimer <= 0)
         {
             Panic();
         }
@@ -36,29 +46,33 @@ public class SoundManager : MonoBehaviour
 
     public void TransitionToPanic()
     {
-        audioSource.clip = normalToPanicTransition;
-        audioSource.Play();
+        toPanicAudiosource.Play();
+        toPanicTransition.TransitionTo(mixerTransitionTime);
         transitioning = Transitioning.ToPanic;
+        transitionTimer = transitionTime;
     }
 
     public void TransitionToNormal()
     {
-        audioSource.clip = panicToNormalTransition;
-        audioSource.Play();
+        toNormalAudiosource.Play();
+        toNormalTransition.TransitionTo(mixerTransitionTime);
         transitioning = Transitioning.ToNormal;
+        transitionTimer = transitionTime;
     }
 
     public void Panic()
     {
-        audioSource.clip = panickedMood;
-        audioSource.Play();
+        panicAudiosource.Play();
+        normalMood.TransitionTo(mixerTransitionTime);
         transitioning = Transitioning.No;
+        transitionTimer = 0;
     }
 
     public void Normal()
     {
-        audioSource.clip = normalMood;
-        audioSource.Play();
+        normalAudiosource.Play();
+        normalMood.TransitionTo(mixerTransitionTime);
         transitioning = Transitioning.No;
+        transitionTimer = 0;
     }
 }

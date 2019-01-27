@@ -58,6 +58,8 @@ public class Panic : MonoBehaviour
         // For debugging purposes only, perhaps remove later
         if (Input.GetButtonDown("Force Panic"))
             level = 100;
+        if (Input.GetButtonDown("Force Panic"))
+            level = 100;
     }
 
     bool InSpotLight()
