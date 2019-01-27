@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca29afac8c9daa4b9870bc4a9edcc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panicLevelForTransition: 70
+  panicLevelForTransition: 50
   normalAudiosource: {fileID: 1057925647807423195}
   toNormalAudiosource: {fileID: 1849852947590025036}
   panicAudiosource: {fileID: 1849852947590025026}
@@ -60,8 +60,8 @@ MonoBehaviour:
     type: 2}
   endGameSnapshot: {fileID: 245924551199406288, guid: 5cb345c13e6bb8143ac2a2c58e7488ba,
     type: 2}
-  mixerTransitionTime: 3
-  timeToTransition: 3
+  mixerTransitionTime: 2
+  timeToTransition: 2
 --- !u!82 &1057925647807423195
 AudioSource:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243418445607693464, guid: 5cb345c13e6bb8143ac2a2c58e7488ba,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: f6e25df138ff9464da94a64e6d4bf994, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1741aa2ac6cab6d4b9bf343e4ff765ad, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
