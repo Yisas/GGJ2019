@@ -440,7 +440,7 @@ InputManager:
   - serializedVersion: 3
     m_Name: Player 2 Start
     descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveNegativeName: joystick 1 button 2
     negativeButton: 
     positiveButton: 2
     altNegativeButton: 
