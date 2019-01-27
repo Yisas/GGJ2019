@@ -12,7 +12,7 @@ This game requires a 2 monitors and 2 controllers plugged in on the same PC, and
 - [Vladimir De La Cruz](https://github.com/vladimirdlc)
 - Jesus Imery
 - Alex Glukov
-- Sam
+- [Samuel Proulx](https://github.com/proulxsamuel)
 - Michelle Samsom
 - Sherm
 (add your name)
