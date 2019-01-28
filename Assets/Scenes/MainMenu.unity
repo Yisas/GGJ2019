@@ -1458,7 +1458,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Player 1 start
+  m_Text: 'Player 1
+
+    Press A to start'
 --- !u!222 &353666287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4695,8 +4697,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Inactive: {fileID: 1071639315}
   player1Active: {fileID: 1220882579}
+  player1ActiveText: {fileID: 353666286}
   player2Inactive: {fileID: 596921862}
   player2Active: {fileID: 1007404850}
+  player2ActiveText: {fileID: 1762569223}
 --- !u!1001 &1187174554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6464,7 +6468,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Player 2 start
+  m_Text: 'Player 2
+
+    Press A to start'
 --- !u!222 &1762569224
 CanvasRenderer:
   m_ObjectHideFlags: 0

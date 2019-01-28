@@ -10,8 +10,10 @@ public class MainMenu : MonoBehaviour
     private bool player2Started = false;
     public GameObject player1Inactive;
     public GameObject player1Active;
+    public Text player1ActiveText;
     public GameObject player2Inactive;
     public GameObject player2Active;
+    public Text player2ActiveText;
 
     private Animator anim;
 
@@ -29,7 +31,8 @@ public class MainMenu : MonoBehaviour
             {
                 player1Started = true;
                 player1Active.SetActive(true);
-                player1Inactive.SetActive(false); ;
+                player1Inactive.SetActive(false);
+                player1ActiveText.enabled = false;
             }
         }
 
@@ -40,6 +43,7 @@ public class MainMenu : MonoBehaviour
                 player2Started = true;
                 player2Active.SetActive(true);
                 player2Inactive.SetActive(false);
+                player2ActiveText.enabled = false;
             }
         }
 
