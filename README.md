@@ -7,11 +7,11 @@
 
 ## Technology notes
 1-2 Players Game. 
-You may download the executable binaries from the [GGJ website](https://globalgamejam.org/2018/games/dungeon-mind) or by direct download [here](https://ggj.s3.amazonaws.com/games/2018/01/175640/exec/ZXX78/Dungeon%20of%20the%20Mind.zip).
+You may download the executable binaries from the [GGJ website](https://globalgamejam.org/2019/games/where-light-shines).
 
 ## Contributing members
 - [Vladimir De La Cruz](https://github.com/vladimirdlc)
-- Jesus Imery
+- [Jesus Imery](https://github.com/Yisas)
 - Alex Glukov
 - [Samuel Proulx](https://github.com/proulxsamuel)
 - Michelle Samsom
