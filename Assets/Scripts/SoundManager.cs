@@ -20,6 +20,7 @@ public class SoundManager : MonoBehaviour
     private enum Transitioning { No, ToNormal, ToPanic }
     private Transitioning transitioning = Transitioning.No;
     private float transitionTimer;
+    private bool gameEnding = false;
 
     private AudioSource audioSource;
 
@@ -45,6 +46,9 @@ public class SoundManager : MonoBehaviour
 
     public void TransitionToPanic()
     {
+        if (gameEnding)
+            return;
+
         toPanicAudiosource.Play();
         transitioning = Transitioning.ToPanic;
         transitionTimer = timeToTransition;
@@ -52,6 +56,9 @@ public class SoundManager : MonoBehaviour
 
     public void TransitionToNormal()
     {
+        if (gameEnding)
+            return;
+
         toNormalAudiosource.Play();
         transitioning = Transitioning.ToNormal;
         transitionTimer = timeToTransition;
@@ -59,7 +66,10 @@ public class SoundManager : MonoBehaviour
 
     public void Transition()
     {
-        if(transitioning == Transitioning.ToNormal)
+        if (gameEnding)
+            return;
+
+        if (transitioning == Transitioning.ToNormal)
             normalMood.TransitionTo(mixerTransitionTime);
         else if(transitioning == Transitioning.ToPanic)
             panickedMood.TransitionTo(mixerTransitionTime);
@@ -67,6 +77,10 @@ public class SoundManager : MonoBehaviour
 
     public void EndGame()
     {
+        if (gameEnding)
+            return;
+
+        gameEnding = true;
         transitioning = Transitioning.No;
         endGameAudioSource.Play();
         endGameSnapshot.TransitionTo(mixerTransitionTime);
