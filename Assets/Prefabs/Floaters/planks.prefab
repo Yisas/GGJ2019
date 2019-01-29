@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7682369148599606585}
   m_Layer: 9
   m_Name: planks
-  m_TagString: Bouy
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
