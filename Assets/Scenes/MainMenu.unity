@@ -1174,7 +1174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeImage: {fileID: 21300000, guid: ca953b73b5705eb4c80abb6fa172be35, type: 3}
   inactiveImage: {fileID: 21300000, guid: 98322ea24b9db8541a17de757f61ec84, type: 3}
-  first: 0
+  first: 1
 --- !u!114 &201950786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1563,9 +1563,9 @@ RectTransform:
   m_Father: {fileID: 1154769498}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400, y: 450}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -400, y: 450}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &353666286
@@ -3430,7 +3430,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1705034275}
+  m_FirstSelected: {fileID: 201950783}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &863584401
@@ -5915,7 +5915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeImage: {fileID: 21300000, guid: 07b917a3df6a9c449ac47a7130c86853, type: 3}
   inactiveImage: {fileID: 21300000, guid: cb51ca79b552e15499051c7f564e154e, type: 3}
-  first: 1
+  first: 0
 --- !u!1001 &1712476364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7632,9 +7632,9 @@ RectTransform:
   m_Father: {fileID: 1154769498}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -400, y: 450}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 400, y: 450}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2122422896
@@ -7670,7 +7670,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 2 Player
+  m_Text: '2 Player
+
+    (Recommended)'
 --- !u!222 &2122422897
 CanvasRenderer:
   m_ObjectHideFlags: 0
