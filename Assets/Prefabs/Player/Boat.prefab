@@ -188,7 +188,7 @@ MonoBehaviour:
   obstacleCollisionPunishment: 0
   hitRockSound: {fileID: 8300000, guid: 130e79d509b2719418d15c71c561b92e, type: 3}
   hitCrateSound: {fileID: 8300000, guid: 72475579a1352fa43ab78ead66989b21, type: 3}
-  hitBouySound: {fileID: 8300000, guid: 130e79d509b2719418d15c71c561b92e, type: 3}
+  hitBouySound: {fileID: 8300000, guid: dad5acce01eb32f409d63bf4e9bd30bd, type: 3}
 --- !u!114 &6548762326987161331
 MonoBehaviour:
   m_ObjectHideFlags: 0
