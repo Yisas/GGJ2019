@@ -26,6 +26,7 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -69,6 +70,5 @@ public class SoundManager : MonoBehaviour
         transitioning = Transitioning.No;
         endGameAudioSource.Play();
         endGameSnapshot.TransitionTo(mixerTransitionTime);
-        DontDestroyOnLoad(endGameAudioSource);
     }
 }

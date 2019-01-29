@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour
 {
     private bool player1Started = false;
     private bool player2Started = false;
+    private bool gameStarting = false;
+
     public GameObject player1Inactive;
     public GameObject player1Active;
     public Text player1ActiveText;
@@ -47,15 +49,16 @@ public class MainMenu : MonoBehaviour
             }
         }
 
-        if (player1Started && player2Started)
+        if (player1Started && player2Started && !gameStarting)
         {
+            gameStarting = true;
+            FindObjectOfType<SoundManager>().TransitionToNormal();
             anim.SetTrigger("start");
         }
     }
 
     public void StartGame()
     {
-        Debug.Log("here");
         SceneManager.LoadScene(1);
     }
 }
