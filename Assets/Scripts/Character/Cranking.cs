@@ -33,8 +33,19 @@ public class Cranking : MonoBehaviour
     {
         cameraCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<CameraCanvas>();
         player = GetComponent<Focus>().target.GetComponent<Steering>();
-        horizontalInputName = player.horizontalInputName;
-        verticalInputName = player.verticalInputName;
+
+        if (!GManager.singlePlayer)
+        {
+            horizontalInputName = player.horizontalInputName;
+            verticalInputName = player.verticalInputName;
+        }
+        else
+        {
+            horizontalInputName = "Single Player Lighthouse Vertical";
+            verticalInputName = "Single Player Lighthouse Horizontal";
+        }
+
+
         light = GetComponent<Light>();
         initialIntensity = light.intensity;
         //Activate();
