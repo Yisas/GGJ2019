@@ -30,13 +30,13 @@ public class MainMenu : MonoBehaviour
     public void StartSinglePlayer()
     {
         CommonPreStart();
-        gManager.singlePlayer = true;
+        GManager.singlePlayer = true;
     }
 
     public void StartMultiplayer()
     {
         CommonPreStart();
-        gManager.singlePlayer = false;
+        GManager.singlePlayer = false;
     }
 
     public void StartGame()

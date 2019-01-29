@@ -137,11 +137,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f670b07eadf334a43a073812b0bf3973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlightTarget: 1
   horizontalInputName: Vertical 2
   verticalInputName: Horizontal 2
   acceleration: 2
   drag: 0.95
   maxVelocity: 10
+  affectedByWind: 0
 --- !u!114 &5370700537066943850
 MonoBehaviour:
   m_ObjectHideFlags: 0

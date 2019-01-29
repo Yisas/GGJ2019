@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Steering : MonoBehaviour
 {
+    public bool spotlightTarget = false;
     [SerializeField] internal string horizontalInputName = "Horizontal";
     [SerializeField] internal string verticalInputName = "Vertical";
 
@@ -27,6 +28,13 @@ public class Steering : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         wind = GameObject.FindWithTag("Wind").GetComponent<Wind>();
         endGameLocation = GameObject.FindWithTag("End Game Destination").transform;
+
+        // 2 player code
+        if (GManager.singlePlayer && spotlightTarget)
+        {
+            horizontalInputName = "Single Player Lighthouse Vertical";
+            verticalInputName = "Single Player Lighthouse Horizontal";
+        }
     }
 
     void Update()
